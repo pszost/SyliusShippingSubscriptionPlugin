@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file was created by developers working at BitBag
+ * Do you need more information about us and what we do? Visit our https://bitbag.io website!
+ * We are hiring developers from all over the world. Join us and start your new, exciting adventure and become part of us: https://bitbag.io/career
+*/
+
 namespace spec\BitBag\SyliusShippingSubscriptionPlugin\Checker\Eligibility;
 
 use BitBag\SyliusShippingSubscriptionPlugin\Checker\Eligibility\ShippingSubscriptionEligibilityChecker;
@@ -33,16 +39,6 @@ final class ShippingSubscriptionEligibilityCheckerSpec extends ObjectBehavior
 
     function it_should_not_support_empty_order(ShipmentInterface $shippingSubject, ShippingSubscriptionMethodInterface $shippingMethod)
     {
-        $this->isSubscriptionActive($shippingSubject, $shippingMethod)->shouldReturn(false);
-    }
-
-    function it_should_not_support_empty_customer(
-        ShipmentInterface $shippingSubject,
-        ShippingSubscriptionMethodInterface $shippingMethod,
-        OrderInterface $order
-    )
-    {
-        $shippingSubject->getOrder()->willReturn($order);
         $this->isSubscriptionActive($shippingSubject, $shippingMethod)->shouldReturn(false);
     }
 
